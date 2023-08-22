@@ -1,25 +1,26 @@
-Absolutely, here's the complete lab report format along with the full code you provided earlier:
-
----
-
 ## Lab Report: Basic Study of Singly Linked List
 
 ### Objectives:
+
 1. To understand the concept of a singly linked list.
 2. To implement basic operations such as creation, traversal, and searching on a singly linked list.
 
 ---
 
 ### Introduction:
+
 A singly linked list is a fundamental data structure in computer science, often used to store and manage collections of data. In this lab, we explore the creation of a singly linked list and perform operations like finding the size, traversing elements, and searching for specific values within the list.
 
 ---
 
 ### Description:
+
 #### Singly Linked List:
+
 A singly linked list is composed of nodes, each containing data and a reference to the next node. The last node's reference points to NULL, indicating the end of the list. Linked lists offer dynamic memory allocation and efficient insertion and deletion of elements.
 
 #### Basic Operations:
+
 1. **Create List**: This operation allows users to input values and creates a singly linked list.
 2. **Size**: The size operation calculates and returns the number of nodes in the linked list.
 3. **Traverse**: Traverse operation iterates through the list, printing each node's data.
@@ -28,6 +29,7 @@ A singly linked list is composed of nodes, each containing data and a reference 
 ---
 
 ### Code:
+
 ```c
 #include <stdio.h>
 #include <stdlib.h>
@@ -86,7 +88,7 @@ int size(){
     while(Head!=NULL){
         count++;
         Head = Head->next;
-    }    
+    }
     printf("Size of the list is: %d\n",count);
     return count;
 }
@@ -122,6 +124,7 @@ bool search(){
 ---
 
 ### Output:
+
 ```python
 Add a new value: 10
 Do you want to continue adding?
@@ -147,6 +150,7 @@ Insert a value to search: 20
 ---
 
 ### Discussion:
+
 Singly linked lists are versatile data structures that find applications in various programming scenarios, including database systems and memory management. Through this lab, we have built a strong foundation for further exploration of more advanced linked list operations and their real-world applications.
 
 ---
