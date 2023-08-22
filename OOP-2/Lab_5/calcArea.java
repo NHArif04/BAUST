@@ -1,18 +1,21 @@
-//package Lab4;
-class calc {
-    int areaRectangle(int height, int width) {
-        return height * width;
+class Rectangle {
+    double length;
+    double width;
+
+    public Rectangle(double l, double w) {
+        length = l;
+        width = w;
+    }
+
+    public double calculateArea() {
+        return length * width;
     }
 }
 
-public class calcArea{
-
+public class calcArea {
     public static void main(String[] args) {
-        // ClassObject object = new ClassObject();
-
-        calc obj = new calc();
-
-        System.out.println("Area is: " + obj.areaRectangle(40, 50));
-
+        Rectangle myRectangle = new Rectangle(5.0, 3.0);
+        double rectangleArea = myRectangle.calculateArea();
+        System.out.println("Rectangle area: " + rectangleArea);
     }
 }
