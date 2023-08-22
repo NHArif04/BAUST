@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantum Number</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<span class="date">Date: 20 July, 2023</span>
+<span class="lecture-number">Lecture - 3</span>
+
+<h2><br><mark>Quantum Number</mark></h2>
+<h3><b>Question:</b></h3>
+<h3>What is Quantum Number? Describe them.</h3>
+<blockquote>The number which used to explain the complete arrangement of electrons around the nucleus of atom are know as quantum number.
+There are
+<ol type=" i ">
+  <li>Principal quantum number (n)</li>
+  <li>Azimuthal quantum number (l) → Angular momentum Q.N.</li>
+  <li>Magnetic quantum number (m)</li>
+  <li>Spin quantum number (s)</li>
+</ol></blockquote>
+
+
+<br>
+
+<h4>Principal Quantum Number:</h4>
+<blockquote>The quantum number which used to explain the distance of an electron from the nucleus of an atom is known as principal quantum number. Denoted by n = 1,2,3,... any integer number. If the value of n increase the distance of electron from the nucleus will also increase.</blockquote>
+
+<br>
+
+<h4>Azimuthal Quantum Number: <mark>Important</mark></h4>
+<blockquote>The quantum number which used to explain the number and name of sub-shell present in any shell is known as azimuthal quantum number.
+Denoted by l and its value is from 0 to n-1 (integer value).<br>
+<i>:</i>. l = 0 → (n-1)
+<br>
+When l = 0, sub-shell will be 's'<br>
+When l = 1, sub-shell will be 'p'<br>
+When l = 2, sub-shell will be 'd'<br>
+When l = 3, sub-shell will be 'f'<br></blockquote>
+
+<br>
+
+<h4>Magnetic Quantum Number: <mark>Important</mark></h4>
+<blockquote>The quantum number which used to explain the number of orbital present in any shell or sub-shell is known as magnetic quantum number. Denoted by m.<br>
+<i>:</i>. m = +l → 0 → -l<br>
+The number of m indicate number of orbital.</blockquote>
+
+<br>
+
+<h4>Spin Quantum Number:</h4>
+<blockquote>The quantum number which used to explain the rotation of two electrons in an orbital is known as spin quantum number. Denoted by s.<br>
+<i>:</i>. s = +1/2, -1/2<br></blockquote>
+
+<br><br>
+
+<div class="button-container">
+    <span class="prev-lecture"><button><a href="lecture-2.html">Previous Lecture</a></button></span>
+    <span class="next-lecture"><button><a href="lecture-4.html">Next Lecture</a></button></span>
+</div>
+
+
+<script>
+    // Get the button container element
+    var buttonContainer = document.querySelector(".button-container");
+
+    // Hide the button container initially
+    buttonContainer.style.display = "none";
+
+    // Add an event listener for when the user scrolls the page
+    window.addEventListener("scroll", function() {
+        // Check if the user has scrolled to the bottom of the page
+        if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+            // Show the button container
+            buttonContainer.style.display = "block";
+        } else {
+            // Hide the button container
+            buttonContainer.style.display = "none";
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+301 Dhaka Nursing College, Dhaka Diploma in Midwifery 50
+302 Rajshahi Nursing College, Rajshahi Diploma in Midwifery 50
+303 Chattogram Nursing College, Chattogram Diploma in Midwifery 50
+304 Mymensingh Nursing College, Mymensingh Diploma in Midwifery 50
+305 Rangpur Nursing College, Rangpur Diploma in Midwifery 50
+306 Sylhet Nursing College, Sylhet Diploma in Midwifery 50
+307 Barishal Nursing College, Barishal Diploma in Midwifery 50
+308 Bogura Nursing College, Bogura Diploma in Midwifery 50
+309 Fouzderhat Nursing College, Chattogram Diploma in Midwifery 50
+310 Manikgonj Nursing College, Manikganj Diploma in Midwifery 25
+311 Nursing Institute, Mitford, Dhaka Diploma in Midwifery 25
+312 Nursing & Midwifery College, Cumilla Diploma in Midwifery 25
+313 Nursing & Midwifery College, Noakhali Diploma in Midwifery 25
+314 Nursing & Midwifery College. Tangail Diploma in Midwifery 25
+315 Nursing & Midwifery College, Faridpur Diploma in Midwifery 25
+316 Nursing & Midwifery College, Khulna Diploma in Midwifery 25
+317 Nursing & Midwifery College, Jashore Diploma in Midwifery 25
+318 Nursing Institute, Kushtia Diploma in Midwifery 25
+319 Nursing & Midwifery College, Satkhira Diploma in Midwifery 25
+320 Pabna Nursing College, Pabna Diploma in Midwifery 25
+321 Dinajpur Nursing College, Dinajpur Diploma in Midwifery 25
+322 Nursing & Midwifery College, Bogura Diploma in Midwifery 50
+323 Nursing Institute, Munshiganj Diploma in Midwifery 25
+324 Nursing & Midwifery College, Gopalganj Diploma in Midwifery 25
+325 Nursing & Midwifery College, Habiganj Diploma in Midwifery 25
+326 Nursing Institute, Chandpur Diploma in Midwifery 25
+327 Nursing Institute, Sirajganj Diploma in Midwifery 25
+328 Nursing Institute, Rajbari Diploma in Midwifery 25
+329 Nursing Institute, Jhenaidah Diploma in Midwifery 25
+330 Nursing Institute, Joypurhat Diploma in Midwifery 25
+331 Nursing Institute, Kishoreganj Diploma in Midwifery 25
+332 Nursing Institute, Moulvibazar Diploma in Midwifery 25
+333 Nursing & Midwifery College, Feni Diploma in Midwifery 25
+334 Nursing Institute, Kurigram Diploma in Midwifery 25
+335 Nursing Institute, Pirojpur Diploma in Midwifery 25
+336 Nursing Institute, Naogaon Diploma in Midwifery 25
+337 Nursing Institute, Rangamati Diploma in Midwifery 25
+338 Nursing Institute, Patuakhali Diploma in Midwifery 25
+339 Syeda Zohra Tajuddin Nursing College, Kapasia, Gazipur Diploma in Midwifery 25
+340 Lalmonirhat Nursing College, Lalmonirhat Diploma in Midwifery 25
+341 Bandarban Nursing College, Bandarban Diploma in Midwifery 25
+342 College of Nursing, Shere Banglanagar, Dhaka Diploma in Midwifery 25
+343 Jhalakathi Nursing College, Jhalakathi Diploma in Midwifery 50
+344 Nursing & Midwifery College, Dinajpur Diploma in Midwifery 25
+345 Nursing & Midwifery College, Cox's Bazar Diploma in Midwifery 25
+346 Nursing & Midwifery College. Bhola Diploma in Midwifery 25
+347 Nursing & Midwifery College, Jamalpur Diploma in Midwifery 25
+348 Nursing & Midwifery College. Nilphamari Diploma in Midwifery 25
+349 Nursing Institute, Netrokona Diploma in Midwifery 25
+350 Nursing Institute, Rajoir, Madaripur Diploma in Midwifery 25
+351 Nursing Institute, Sherpur Diploma in Midwifery 25
+352 Nursing Institute, Chapainawabganj Diploma in Midwifery 25
+353 Nursing Institute, Thakurgaon Diploma in Midwifery 25
+354 Nursing Institute, Brahmanbaria Diploma in Midwifery 25
+355 Nursing Institute, Bagerhat Diploma in Midwifery 25
+356 Nursing Institute, Chuadanga Diploma in Midwifery 25
+357 Nursing Institute, Magura Diploma in Midwifery 25
+358 Nursing Institute, Madaripur Diploma in Midwifery 25
+359 Nursing Institute, Barguna Diploma in Midwifery 25
+360 Nursing Institute, Panchagarh Diploma in Midwifery 25
+361 Sheikh Hasina Nursing College, Sirajganj Diploma in Midwifery 25
+362 Sayeda Nafisa [slam Nursing College, Kishoreganj Diploma in Midwifery 25

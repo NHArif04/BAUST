@@ -1,0 +1,78 @@
+body {
+  font-family: 'JetBrains Mono', Monaco, 'Courier New', monospace, Consolas, Arial, sans-serif;
+}
+
+h1 {
+  color: green;
+}
+
+h2 {
+  color: rgb(180, 99, 7);
+}
+
+h3 {
+  color: rgb(22, 24, 146);
+}
+
+h4 {
+  color: rgb(13, 136, 2) ;
+}
+
+mark {
+  background-color: rgba(13, 172, 13, 0.685);
+}
+
+blockquote {
+  color: black;
+  border: 0px solid gray;
+  padding: 1px;
+}
+
+.date {
+  color: blue;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  margin-bottom: 20px;
+}
+
+.lecture-number {
+  color: blue;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding-bottom: 20px;
+}
+
+.button-container {
+  position: relative;
+}
+
+.prev-lecture {
+  color: blue;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+
+.next-lecture {
+  color: blue;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+.prev-lecture button, .next-lecture button {
+  background-color: #008805; /* Green */
+  border: none;
+  color: rgb(255, 255, 255);
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.prev-lecture button:hover, .next-lecture button:hover {
+  background-color: #44b147;
+}
