@@ -5,4 +5,11 @@
 - function overriding
 - inheritance
 - constructor
-- what is polymorphism
+
+Theory: 
+what is polymorphism
+This pointer
+function overloading
+function overriding
+inheritance
+constructor
