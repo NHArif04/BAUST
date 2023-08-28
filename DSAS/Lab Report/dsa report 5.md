@@ -95,7 +95,7 @@ int size(){
 
 void traverse(){
     struct node *Head = head;
-    printf("Your List is: ");
+    printf("Linked List is: ");
     while (Head != NULL)
     {
         printf("%d ", Head->data);
@@ -142,7 +142,7 @@ Do you want to continue adding?
 0. No
 => 0
 Size of the list is: 3
-Your List is: 10 20 30
+Linked List is: 10 20 30
 Insert a value to search: 20
 20 Found!
 ```
