@@ -1,16 +1,47 @@
 ## Experiment Name: Operation of Linked List
-/**
- * creation()
- * display()
- * firstInsertion()
- * insertLast()
- * insertPosition() -> optional
- * deleteFirst()
- * deleteLast()
- * deletePosition() -> optional
- */
 
-## Source Code:
+### Objectives:
+1. To understand the basic operations of linked lists.
+2. To practice implementing linked list creation, insertion, and deletion.
+3. To explore searching for elements within a linked list.
+
+### Introduction:
+Linked lists are fundamental data structures in computer science, used for dynamic memory allocation and efficient data management. This experiment focuses on various operations like creating, inserting, and deleting elements in a linked list.
+
+### Description:
+Implementation of the core operations on a singly linked list in C program.In this experiment, we've implemented the following functions:
+
+#### `createList()`
+This function allows the user to input values and creates a linked list. The input is terminated with -1.
+
+#### `size()`
+Counts and returns the number of nodes in the linked list, providing its size.
+
+#### `traverse()`
+Displays the linked list elements.
+
+#### `search()`
+Accepts a value and searches for its presence within the linked list.
+
+#### `insertFirst()`
+Inserts a value at the beginning of the linked list.
+
+#### `insertLast()`
+Inserts a value at the end of the linked list.
+
+#### `insertPosition()`
+Inserts a value at a specified position in the linked list.
+
+#### `firstDelete()`
+Deletes the first element from the linked list.
+
+#### `lastDelete()`
+Deletes the last element from the linked list.
+
+#### `deletePosition()`
+Deletes an element from the linked list based on a specified position.
+
+### Source Code:
 ```C
 #include <stdio.h>
 #include <stdlib.h>
@@ -97,7 +128,7 @@ int size(){
 
 void traverse(){
     struct node *Head = head;
-    printf("Your List is: ");
+    printf("List is: ");
     while (Head != NULL){
         printf("%d ", Head->data);
         Head = Head->next;
@@ -236,26 +267,32 @@ void deletePosition() {
 }
 ```
 
-## Output
+### Output
 ```output
 Add a new value(or -1 to end input): 1
 Add a new value(or -1 to end input): 2
 Add a new value(or -1 to end input): -1
 Size of the list is: 2
-Your List is: 1 2 
+List is: 1 2 
 Input a value to insert at first: 3
-After first insertion Your List is: 3 1 2 
+After first insertion List is: 3 1 2 
 Input a value to insert last: 4
-After last insertion Your List is: 3 1 2 4 
+After last insertion List is: 3 1 2 4 
 Input a value: 5
 Insert at position: 2
 Size of the list is: 4
-After insertion Your List is: 3 5 1 2 4 
+After insertion List is: 3 5 1 2 4 
 Insert a value to search: 5
 5 Found!
-After first deletion Your List is: 5 1 2 4
-After last deletion Your List is: 5 1 2 
+After first deletion List is: 5 1 2 4
+After last deletion List is: 5 1 2 
 Enter position to delete: 2
 Size of the list is: 3
-After deletion Your List is: 5 2 
+After deletion List is: 5 2 
 ```
+
+### Discussion:
+In this experiment we performed - create linked list, calculate its size, search for elements, and insertions and deletions at various positions. By understanding these operations, we can better manage data dynamically and efficiently using linked lists in programming.
+
+### Conclusion:
+This experiment demonstrated the fundamental operations of linked lists. By implementing a range of operations, we gained practical insights into their mechanics. Insertions, deletions, and searching underscored the flexibility of linked lists for dynamic data management.
