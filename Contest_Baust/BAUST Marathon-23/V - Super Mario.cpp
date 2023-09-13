@@ -2,15 +2,21 @@
 using namespace std;
 
 int main(){
-    int test, walls, height;
+    int test, walls;
     cin>>test;
     for(int i=1; i<=test; i++){
         cin >>walls;
-        while(walls--){
-            cin>>
+        int height[walls];
+        int low=0, high = 0;
+        for(int i=0; i<walls; i++){
+            cin>>height[i];
+            if(i>=1 && height[i] > height[i-1]){
+                high++;
+            }else if(i>=1 && height[i] < height[i-1]){
+                low++;
+            }
         }
-        int player = (start+passes-1)%(players)+1;
-        cout<<"Case "<<i<<": "<<player<<endl;
+        cout<<"Case "<<i<<": "<<high<<" "<<low<<endl;
     }
     return 0;
 }
