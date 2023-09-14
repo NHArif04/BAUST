@@ -4,13 +4,13 @@
 using namespace std;
 
 int main(){
-    int test, radiusTop, radiusBottom, heightGlass, heightJuice;
+    int test, R1, R2, H, P;
     cin>>test;
     for(int i=1; i<=test; i++){
-        cin >>radiusTop>>radiusBottom>>heightGlass>>heightJuice;
-        double juiceRadius = radiusBottom + (radiusTop-radiusBottom)*heightJuice/heightGlass;
-        double volume = (acos(0.0)*heightJuice/3)*(pow(radiusTop,2)+pow(juiceRadius,2)+radiusTop*juiceRadius);
-        cout<<"Case "<<i<<": "<<fixed<<setprecision(7)<<volume<<endl;
+        cin >>R1>>R2>>H>>P;
+        double Rp = R1 + (R2-R1)*P/H;
+        double volume = (M_PI*P/3)*(pow(R2,2)+pow(Rp,2)+R2*Rp);
+        cout<<"Case "<<i<<": "<<fixed<<setprecision(8)<<volume<<endl;
     }
     return 0;
 }
