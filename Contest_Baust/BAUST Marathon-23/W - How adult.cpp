@@ -27,7 +27,7 @@ public:
             year_diff--;
         }
         //cout<<day_diff<<" "<<month_diff<<" "<<year_diff<<endl;
-        return (year_diff < 0) ? "Invalid birth date" : (year_diff >= 130) ? "Check birth date" : to_string(year_diff);
+        return (year_diff < 0) ? "Invalid birth date" : (year_diff > 130) ? "Check birth date" : to_string(year_diff);
     }
 };
 

@@ -3,14 +3,6 @@
 #include<vector>
 using namespace std;
 
-void traverse(vector<int> arr, int size){
-    for(int i=0; i<size; i++){
-        cout<<arr[i];
-        if(i<size-1)cout<<" ";
-    }
-    cout<<endl;
-}
-
 int main(){
     int test, size, opNumber, digit, sw1, sw2;
     cin>>test;
@@ -23,6 +15,7 @@ int main(){
         }
         while(opNumber--){
             cin>>operation;
+            int temp;
             switch (operation){
             case 'S':
                 cin>>digit;
@@ -47,7 +40,9 @@ int main(){
             
             case 'P':
                 cin>>sw1>>sw2;
-                arr[sw1]^=arr[sw2]^=arr[sw1]^=arr[sw2];
+                temp = arr[sw1];
+                arr[sw1] = arr[sw2];
+                arr[sw2] = temp;
                 break;
             
             case 'R':
@@ -56,7 +51,11 @@ int main(){
             }
         }
         cout<<"Case "<<j<<": "<<endl;
-        traverse(arr, size);
+        for(int i=0; i<size; i++){
+            cout<<arr[i];
+        if(i<size-1)cout<<" ";
+    }
+    cout<<endl;
     }
     return 0;
 }
