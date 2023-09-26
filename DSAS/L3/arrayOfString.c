@@ -3,7 +3,7 @@
 
 
 int main(){
-    char* name != "Nahid";
+    char* name = "Nahid";
     char* fullName[] = {"Nahid","Hasan","Arif"};
     for(int i = 0; i<size(name); i++){
         printf("%c ",name[i]);

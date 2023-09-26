@@ -1,4 +1,3 @@
-package Lab4;
 import java.util.Scanner;
 public class userAuth{
     public static void main(String[] args) {

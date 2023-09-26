@@ -10,7 +10,7 @@ public class nahid {
         unevenArray[0] = new int[2];
         unevenArray[1] = new int[3];
         unevenArray[2] = new int[4];
-        unEvenArray ={2,5},{5,7,11},{10,11,12,13};
+        unEvenArray ={{2,5},{5,7,11},{10,11,12,13}};
         
         System.out.println(arr[4]);
     }

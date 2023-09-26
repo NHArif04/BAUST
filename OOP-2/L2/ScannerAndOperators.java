@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class LabReport {
+public class ScannerAndOperators {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter first integer: ");
