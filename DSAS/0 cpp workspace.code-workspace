@@ -26,7 +26,11 @@
 			"memory_resource": "cpp",
 			"type_traits": "cpp",
 			"ostream": "cpp",
-			"numbers": "cpp"
+			"numbers": "cpp",
+			"string": "cpp",
+			"stack": "cpp",
+			"deque": "cpp",
+			"vector": "cpp"
 		}
 	}
 }
