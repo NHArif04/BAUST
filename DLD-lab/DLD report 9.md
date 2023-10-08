@@ -1,6 +1,14 @@
 ### **Experiment No:** 09
 
-### **Name of the Experiment:** Study and Implementation of Flip-Flops (S-R, J-K, T, D, Dual J-K)
+### **Name of the Experiment:** 
+Study and Implementation of Flip-Flops (S-R, J-K, T, D, Dual J-K)
+
+### **Objectives:**
+
+To gain a comprehensive understanding of various types of flip-flops used in digital circuits.
+To design and construct circuits using S-R, J-K, T, D, and Dual J-K flip-flops.
+To observe the behavior of these flip-flops under different input conditions and clock signals.
+To analyze and document the practical applications of flip-flops in sequential digital systems.
 
 ### **Apparatus:**
 - Breadboard
