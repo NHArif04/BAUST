@@ -1,15 +1,18 @@
 # Lab Report: Stack Implementation - Array vs. Linked List
 
+---
 ## Objectives:
 
 1. Implement two stack data structures.
 2. Analyze their performance and characteristics.
 3. Determine the advantages and disadvantages of each implementation.
 
+---
 ## Introduction:
 
 This lab explores two implementations of stack data structures: one using an array and the other using a linked list. The primary goals are to understand their behavior, performance, and suitability for various applications.
 
+---
 ## Description:
 
 ### Array-based Stack:
@@ -31,7 +34,8 @@ This lab explores two implementations of stack data structures: one using an arr
   - Efficient memory usage as memory is allocated as needed.
 - **Implementation Complexity:** Slightly more complex due to dynamic sizing.
 
-## Source Code (Array-based Stack):
+---
+## Source Code:
 
 ```cpp
 #include <iostream>
@@ -159,6 +163,7 @@ Array-Stack-pop() -> 10
 Linked-List-Stack-pop() -> 5
 ```
 
+---
 ## Discussion:
 
 - **Array vs. Linked List**:
@@ -179,7 +184,7 @@ Linked-List-Stack-pop() -> 5
   - Array-based stack is simpler to implement due to its fixed size.
   - Linked List-based stack requires slightly more complex memory management.
 
+---
 ## Conclusion:
 
-- Choose the array-based stack for simplicity and when a fixed size suffices.
-- Opt for the linked list-based stack for dynamic sizing, efficient memory usage, accepting the slightly increased implementation complexity.
+Choose the array-based stack for simplicity and when a fixed size suffices. Opt for the linked list-based stack for dynamic sizing, efficient memory usage, accepting the slightly increased implementation complexity.

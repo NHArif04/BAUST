@@ -1,15 +1,21 @@
 # Expression Evaluation in Postfix and Prefix Notations
 ---
 ## Objectives:
+
 1. Evaluate arithmetic expressions in postfix and prefix notations.
 2. Utilize stack data structures for expression evaluation.
 3. Compare the evaluation processes for postfix and prefix notations.
 4. Demonstrate the efficiency of stack-based evaluation.
+
 ---
+
 ## Introduction:
+
 This report explores the evaluation of arithmetic expressions in postfix and prefix notations using stack data structures. It aims to understand the algorithms and processes involved in evaluating expressions in these notations.
+
 ---
 ## Description:
+
 ### Postfix Notation:
 - **Expression Format:** Operators follow their operands.
 - **Evaluation Process:**
@@ -18,7 +24,7 @@ This report explores the evaluation of arithmetic expressions in postfix and pre
   3. Push operands onto the stack.
   4. When an operator is encountered, pop operands from the stack, perform the operation, and push the result back.
   5. The final result is the top element of the stack.
----
+
 ### Prefix Notation:
 - **Expression Format:** Operators precede their operands.
 - **Evaluation Process:**
@@ -27,8 +33,11 @@ This report explores the evaluation of arithmetic expressions in postfix and pre
   3. Push operands onto the stack.
   4. When an operator is encountered, pop operands from the stack, perform the operation, and push the result back.
   5. The final result is the top element of the stack.
+
 ---
+
 ## Source Code:
+
 ```cpp
 #include <iostream>
 #include <stack>
@@ -78,15 +87,18 @@ int main() {
 ```
 
 ---
+
 ## Sample Output:
 
 - Postfix: 11
 - Prefix: 11
 
 ---
+
 ## Discussion:
 The report demonstrates the evaluation of arithmetic expressions in postfix and prefix notations using stack-based algorithms. Both postfix and prefix notations can be efficiently evaluated using stacks, and the results match the expected values.
 
 ---
+
 ## Conclusion:
 Stack-based evaluation simplifies arithmetic expression evaluation in postfix and prefix notations. Postfix notation, with operators following operands, is commonly used in practice due to its efficiency and simplicity in parsing. Prefix notation, with operators preceding operands, has its advantages but is less commonly used.
