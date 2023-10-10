@@ -1,4 +1,4 @@
-import InterfaceStatic.*;
+import l10.InterfaceStatic.*;
 
 public class InsideImport {
     public static void main(String[] args) {
