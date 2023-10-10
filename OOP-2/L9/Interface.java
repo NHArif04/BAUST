@@ -14,6 +14,10 @@ interface A{
     static void show2(){
         System.out.println("implemented using static keyword in interface");
     }
+
+    /* final void show3(){          //interface can not have final method
+        System.out.println("implemented using final keyword in interface");
+    } */
 }
 
 interface B{
@@ -38,6 +42,9 @@ class C implements A, B{
         System.out.println("implemented interface B->d() in C");
     }
 
+    /* static void show2(){         //static method can be overridden by only by static methods
+        System.out.println("implemented using static keyword in interface");
+    } */
     // static b2(){}
 }
 
