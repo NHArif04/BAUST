@@ -1,8 +1,9 @@
 #include <iostream>
-#include <vector>
-#include <fstream>
-#include <string>
-#include <cstdlib>
+#include <vector>       // to use built-in stl->vector
+#include <fstream>      // to work with files
+#include <string>       // to use built in string method
+#include <cstdlib>      // to use function like clear screen
+#include <thread>       // to add waiting time
 
 using namespace std;
 
@@ -13,6 +14,19 @@ void clearScreen(){
 #else
     system("clear");
 #endif
+}
+
+// Function to sleep few seconds
+void pause(int seconds) {
+    std::this_thread::sleep_for(std::chrono::seconds(seconds));
+}
+
+void redirect(int seconds){
+    for(int i=seconds; i>=0; i--){
+        clearScreen();
+        cout<<"Please wait "<<i<<" more seconds to redirect to the page.";
+        pause(1);
+    }
 }
 
 struct User{
@@ -54,17 +68,20 @@ public:
     void loadUserFromFile();
     void registerUser();
     bool loginUser();
-    void loadPatientDataFromFile();
-    void loadAppointmentDataFromFile();
-    void savePatientDataToFile();
-    void saveAppointmentDataToFile();
     void addPatient();
-    void scheduleAppointment();
-    void displayAppointments();
+    void savePatientDataToFile();
     void displayPatients();
-    void generateReport();
+    void loadPatientDataFromFile();
+    void scheduleAppointment();
+    void saveAppointmentDataToFile();
+    void displayAppointments();
+    void loadAppointmentDataFromFile();
     void addMedicalRecord();
     void displayMedicalRecord();
+    void saveMedicalRecordToFile();
+    void loadMedicalRecordFromFile();
+    void modifyPatientInformation();
+    void generateReport();
 };
 
 void Hospital::loadUserFromFile(){
@@ -90,10 +107,10 @@ void Hospital::registerUser(){
     cin >> newUser.username;
     cout << "Enter a password: ";
     cin >> newUser.password;
-
+    
     for (const User &user : users){
         if (user.username == newUser.username){
-            cout << "Username already exists. Registration failed." << endl;
+            cout << "Username already exists. Registration failed.\nPress any key to return." << endl;
             getchar();
             return;
         }
@@ -109,11 +126,13 @@ void Hospital::registerUser(){
     }else{
         cout << "Error opening auth.txt for writing." << endl;
     }
+    redirect(2);
     cin.ignore();
     clearScreen();
 }
 
 bool Hospital::loginUser(){
+    clearScreen();
     string username, password;
     cout << "Login Page" << endl;
     cout << "Enter your username: ";
@@ -125,10 +144,13 @@ bool Hospital::loginUser(){
             cin >> password;
 
             if (user.password == password){
-                cout << "Login successful!" << endl;
+                cout << "Login successful!\n" << endl;
+                pause(1);
+                redirect(2);
                 return true;
             }else{
-                cout << "Incorrect password. Login failed." << endl;
+                cout << "Incorrect password. Login failed.\n" << endl;
+                redirect(2);
                 return false;
             }
         }
@@ -148,14 +170,13 @@ void Hospital::loadPatientDataFromFile(){
             inFile.ignore();
             getline(inFile, patient.firstName);
             getline(inFile, patient.lastName);
-            inFile >> patient.age;
-            inFile.ignore();
+            getline(inFile, patient.age);
             getline(inFile, patient.blood);
-            inFile >> patient.gender;
-            inFile.ignore();
+            getline(inFile, patient.gender);
             patients.push_back(patient);
         }
         inFile.close();
+        loadMedicalRecordFromFile();
         cout << "Patient data loaded from patients.txt" << endl;
     }else{
         cout << "Error opening patients.txt for reading." << endl;
@@ -180,6 +201,30 @@ void Hospital::loadAppointmentDataFromFile(){
     }
 }
 
+void Hospital::loadMedicalRecordFromFile() {
+    ifstream inFile("medical_records.txt");
+    if (inFile.is_open()) {
+        for (int i = 0; i < patients.size(); i++) {
+            unsigned long long ID;
+            int numRecords;
+            inFile >> ID >> numRecords;
+            for (int j = 0; j < numRecords; j++) {
+                MedicalRecord record;
+                inFile.ignore();
+                getline(inFile, record.diagnosis);
+                getline(inFile, record.treatment);
+                patients[i].medicalRecords.push_back(record);
+            }
+        }
+        inFile.close();
+        cout << "Medical records data loaded from medical_records.txt" << endl;
+    }
+    else {
+        cout << "Error opening medical_records.txt for reading." << endl;
+    }
+}
+
+
 void Hospital::savePatientDataToFile(){
     ofstream outFile("patients.txt");
     if (outFile.is_open()){
@@ -191,11 +236,11 @@ void Hospital::savePatientDataToFile(){
             outFile << patient.age << endl;
             outFile << patient.blood << endl;
             outFile << patient.gender << endl;
-            outFile << patient.medicalRecords.size() << endl;
-            for (const MedicalRecord &record : patient.medicalRecords){
-                outFile << record.diagnosis << endl;
-                outFile << record.treatment << endl;
-            }
+            // outFile << patient.medicalRecords.size() << endl;
+            // for (const MedicalRecord &record : patient.medicalRecords){
+            //     outFile << record.diagnosis << endl;
+            //     outFile << record.treatment << endl;
+            // }
         }
         outFile.close();
         cout << "Patient data saved to patients.txt" << endl;
@@ -220,7 +265,28 @@ void Hospital::saveAppointmentDataToFile(){
     }
 }
 
+void Hospital::saveMedicalRecordToFile() {
+    ofstream outFile("medical_records.txt");
+    if (outFile.is_open()) {
+        for (const Patient& patient : patients) {
+            outFile << patient.ID << " " << patient.medicalRecords.size() << endl;
+            for (const MedicalRecord& record : patient.medicalRecords) {
+                outFile << record.diagnosis << endl;
+                outFile << record.treatment << endl;
+            }
+        }
+        outFile.close();
+        cout << "Medical records data saved to medical_records.txt" << endl;
+    }
+    else {
+        cout << "Error opening medical_records.txt for writing." << endl;
+    }
+}
+
+
 void Hospital::addPatient(){
+    clearScreen();
+
     Patient p;
 
     cout << "Enter patient details:\n";
@@ -246,9 +312,41 @@ void Hospital::addPatient(){
     count++;
     savePatientDataToFile();
     cout << "Patient added successfully!\nPress 'Enter' to return to the Main Menu" << endl;
+    getchar();
 }
 
+
+void Hospital::modifyPatientInformation() {
+    long long ID;
+    cout << "Enter patient ID to modify information: ";
+    cin >> ID;
+
+    for (int i = 0; i < patients.size(); i++) {
+        if (patients[i].ID == ID) {
+            cout << "Modify Patient Information for ID: " << patients[i].ID << endl;
+            cout << "Enter First Name: ";
+            cin >> patients[i].firstName;
+            cout << "Enter Last Name: ";
+            cin >> patients[i].lastName;
+            cout << "Enter Age: ";
+            cin >> patients[i].age;
+            cout << "Enter Blood Group: ";
+            cin >> patients[i].blood;
+            cout << "Enter Gender (m/f): ";
+            cin >> patients[i].gender;
+
+            savePatientDataToFile();
+            cout << "Patient information updated successfully!\n";
+            redirect(2);
+            return;
+        }
+    }
+    cout << "Patient not found!\n";
+}
+
+
 void Hospital::displayPatients(){
+    clearScreen();
     cout << "List of patients:\n";
     cout << "========================================" << endl;
     for (int i = 0; i < count; i++){
@@ -259,11 +357,15 @@ void Hospital::displayPatients(){
         cout << "Gender     : " << patients[i].gender << endl;
         cout << "========================================" << endl;
     }
+    if(0 == count){
+        cout<<"No patient to display\n\n";
+    }
     cout << "Press 'Enter' to return to the Main Menu" << endl;
     cin.ignore();
 }
 
 void Hospital::addMedicalRecord(){
+    clearScreen();
     long long ID;
     cout << "Enter patient ID: ";
     cin >> ID;
@@ -273,11 +375,14 @@ void Hospital::addMedicalRecord(){
             MedicalRecord record;
             cout << "Enter diagnosis: ";
             cin >> record.diagnosis;
+            cin.ignore();
             cout << "Enter treatment: ";
             cin >> record.treatment;
+            cin.ignore();
             patients[i].medicalRecords.push_back(record);
+            saveMedicalRecordToFile();
             cout << "Medical record added successfully!\n";
-            savePatientDataToFile();
+            pause(1);
             return;
         }
     }
@@ -285,6 +390,7 @@ void Hospital::addMedicalRecord(){
 }
 
 void Hospital::displayAppointments(){
+    clearScreen();
     cout << "List of appointments:\n";
     for (int i = 0; i < appointments.size(); i++){
         cout << "Doctor name : " << appointments[i].doctorName << endl;
@@ -293,10 +399,17 @@ void Hospital::displayAppointments(){
         cout << "Time        : " << appointments[i].time << endl;
         cout << "========================================" << endl;
     }
+    cout<<"Press 'Enter' to return.\n";
+    getchar();
 }
 
 void Hospital::displayMedicalRecord(){
+    clearScreen();
     long long ID;
+    if(0 == count){
+        cout<<"No patient has found!\n";
+        return;
+    }
     cout << "Enter patient ID: ";
     cin >> ID;
     for (int i = 0; i < patients.size(); i++){
@@ -307,6 +420,9 @@ void Hospital::displayMedicalRecord(){
                 cout << "Treatment : " << patients[i].medicalRecords[j].treatment << endl;
                 cout << "========================================" << endl;
             }
+            cout<<"Enter 'Enter' key to return\n";
+            getchar();
+            redirect(1);
             return;
         }
     }
@@ -328,9 +444,11 @@ void Hospital::scheduleAppointment()
     appointments.push_back(a);
     cout << "Appointment scheduled successfully!\n";
     saveAppointmentDataToFile();
+    redirect(2);
 }
 
 void Hospital::generateReport(){
+    clearScreen();
     long long ID;
     cout << "Enter patient ID: ";
     cin >> ID;
@@ -347,6 +465,8 @@ void Hospital::generateReport(){
                 cout << "Treatment: " << patients[i].medicalRecords[j].treatment << endl;
                 cout << "========================================" << endl;
             }
+            cout<<"Press 'Enter' to return\n";
+            getchar();
             return;
         }
     }
@@ -359,8 +479,8 @@ int main(){
     hospital.loadPatientDataFromFile();
     hospital.loadAppointmentDataFromFile();
     while (true){
-        clearScreen();
         auth:
+        clearScreen();
         cout << "Hospital Management System" << endl;
         cout << "1. Register" << endl;
         cout << "2. Login" << endl;
@@ -385,9 +505,11 @@ int main(){
                     cout << "4. Display Patients" << endl;
                     cout << "5. Add Medical Record" << endl;
                     cout << "6. Display Medical Record" << endl;
-                    cout << "7. Generate Report" << endl;
-                    cout << "8. Logout" << endl;
-                    cout << "Enter your choice: ";
+                    cout << "7. Modify Patient Information" << endl;
+                    cout << "8. Generate Report" << endl;
+                    cout << "9. Logout" << endl;
+                    cout << "\nEnter your choice: ";
+
                     cin >> choice;
                     cin.ignore();
 
@@ -417,14 +539,21 @@ int main(){
                         break;
 
                     case 7:
-                        hospital.generateReport();
+                        hospital.modifyPatientInformation();
                         break;
 
                     case 8:
+                        hospital.generateReport();
+                        break;
+
+                    case 9:
                         clearScreen();
-                        cout << "Logged out successfully!" << endl;
                         hospital.savePatientDataToFile();
                         hospital.saveAppointmentDataToFile();
+                        cout << "Logged out successfully!\nEnter any key to return." << endl;
+                        getchar();
+                        redirect(2);
+                        clearScreen();
                         goto auth;
                         break;
 
@@ -437,7 +566,7 @@ int main(){
             break;
 
         case 3:
-            cout << "Goodbye!" << endl;
+            cout << "Program Terminated!" << endl;
             return 0;
 
         default:
