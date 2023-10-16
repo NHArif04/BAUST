@@ -1,9 +1,11 @@
 package main;
-import main.Importing.*;
 
-public class Main{
+import same.Sub;
+
+public class Main {
     public static void main(String[] args) {
-        Importing obj = new Importing();
-        obj.main(args);
+        Sub obj = new Sub();
+        obj.sShow3();
+        obj.dShow3();
     }
 }
