@@ -1,10 +1,11 @@
-1 1
+1 2
 nai
 kono-kicu
+ki
+je
 2 1
 jani
 na
-5 0
 9 1
 mela
 kicu

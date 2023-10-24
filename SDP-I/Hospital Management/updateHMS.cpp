@@ -18,7 +18,11 @@ void clearScreen(){
 
 // Function to sleep few seconds
 void pause(int seconds) {
-    std::this_thread::sleep_for(std::chrono::seconds(seconds));
+    this_thread::sleep_for(chrono::seconds(seconds));
+}
+
+void pauseMili(int milliseconds) {
+    this_thread::sleep_for(chrono::milliseconds(milliseconds));
 }
 
 void redirect(int seconds){
@@ -323,26 +327,48 @@ void Hospital::modifyPatientInformation() {
 
     for (int i = 0; i < patients.size(); i++) {
         if (patients[i].ID == ID) {
+            modify:
             cout << "Modify Patient Information for ID: " << patients[i].ID << endl;
-            cout << "Enter First Name: ";
-            cin >> patients[i].firstName;
-            cout << "Enter Last Name: ";
-            cin >> patients[i].lastName;
-            cout << "Enter Age: ";
-            cin >> patients[i].age;
-            cout << "Enter Blood Group: ";
-            cin >> patients[i].blood;
-            cout << "Enter Gender (m/f): ";
-            cin >> patients[i].gender;
+            cout << "1. Update Information" << endl;
+            cout << "2. Delete Patient" << endl;
+            cout << "Enter your choice: ";
+            int choice;
+            cin >> choice;
+            cin.ignore();
+            
+            if (choice == 1) {
+                cout << "Enter First Name: ";
+                cin >> patients[i].firstName;
+                cout << "Enter Last Name: ";
+                cin >> patients[i].lastName;
+                cout << "Enter Age: ";
+                cin >> patients[i].age;
+                cout << "Enter Blood Group: ";
+                cin >> patients[i].blood;
+                cout << "Enter Gender (m/f): ";
+                cin >> patients[i].gender;
 
-            savePatientDataToFile();
-            cout << "Patient information updated successfully!\n";
-            redirect(2);
+                savePatientDataToFile();
+                cout << "Patient information updated successfully!\n";
+                pause(1);
+            } else if (choice == 2) {
+                patients.erase(patients.begin() + i);
+                count--;
+                savePatientDataToFile();
+                cout << "Patient deleted successfully!\n";
+                pause(1);
+            } else {
+                cout << "Invalid choice!\n";
+                pause(1);
+                clearScreen();
+                goto modify;
+            }
             return;
         }
     }
     cout << "Patient not found!\n";
 }
+
 
 
 void Hospital::displayPatients(){
@@ -473,7 +499,45 @@ void Hospital::generateReport(){
     cout << "Patient not found!\n";
 }
 
+
+/** 
+16 color values (0 to F) map to the actual colors:
+
+0: Black                    1: Blue 
+2: Green                    3: Aqua
+4: Red                      5: Purple
+6: Yellow                   7: White
+8: Gray                     9: Light Blue
+A: Light Green              B: Light Aqua
+C: Light Red                D: Light Purple
+E: Light Yellow             F: Bright White
+
+system("color XY");  //? X=>background, Y=>text color
+**/
+
+void intro(){
+        const char* colors[] = {"color 7F", "color 37", "color 12", "color 01", "color 03", "color 0B"};
+        for(auto color:colors){
+        clearScreen();
+        system(color);
+        cout << "\t\tBANGLADESH ARMY UNIVERSITY OF SCIENCE AND TECHNOLOGY\n";
+        cout << "\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
+        cout << "Department : Computer Science and Technology\n";
+        cout << "NAHID HASAN ARIF & AL MUSTAVIS AHMED RIFAT\n";
+        cout << "Project name: HOSPITAL MANAGEMENT SYSTEM\n";
+        cout << "Using Language: C++(OOP)\n";
+        cout << "Project made by application: VISUAL STUDIO CODE & MYSY2(MINGW64) COMPILER\n";
+        cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
+        pauseMili(150);
+    }
+}
+
+
 int main(){
+    intro();
+    pause(2);
+    clearScreen();
+    system("color 0B");
     Hospital hospital;
     hospital.loadUserFromFile();
     hospital.loadPatientDataFromFile();
@@ -508,7 +572,7 @@ int main(){
                     cout << "7. Modify Patient Information" << endl;
                     cout << "8. Generate Report" << endl;
                     cout << "9. Logout" << endl;
-                    cout << "\nEnter your choice: ";
+                    cout << "Enter your choice: ";
 
                     cin >> choice;
                     cin.ignore();

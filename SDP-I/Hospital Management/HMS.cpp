@@ -8,7 +8,7 @@
 using namespace std;
 
 // Function to clear the screen based on the operating system
-void clearScreen(){
+void clearScreen(){                 //return_type function_name (parameter){ body }
 #ifdef _WIN32
     system("cls");
 #else
@@ -18,7 +18,7 @@ void clearScreen(){
 
 // Function to sleep few seconds
 void pause(int seconds) {
-    this_thread::sleep_for(chrono::seconds(seconds));
+    this_thread::sleep_for(chrono::seconds(seconds));           //namespace, scope resolution->::
 }
 
 void pauseMili(int milliseconds) {
@@ -33,19 +33,19 @@ void redirect(int seconds){
     }
 }
 
-struct User{
+struct User{                        //user define data type ->   User user;  int a;     => user.username = "Rifat"
     string username;
     string password;
 };
 
-struct Appointment{
+struct Appointment{                  //user define data type ->   Appointment appoint;  int a;
     string doctorName;
     string patientName;
     string date;
     string time;
 };
 
-struct MedicalRecord{
+struct MedicalRecord{                               //MedicalRecord record;  record.diagnosis="value";
     string diagnosis;
     string treatment;
 };
@@ -57,7 +57,7 @@ struct Patient{
     string age;
     string blood;
     string gender;
-    vector<MedicalRecord> medicalRecords;
+    vector<MedicalRecord> medicalRecords;                   //medicalRecords.pushback(record)
 };
 
 class Hospital{
@@ -523,7 +523,7 @@ void intro(){
         cout << "\t\tBANGLADESH ARMY UNIVERSITY OF SCIENCE AND TECHNOLOGY\n";
         cout << "\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
         cout << "Department : Computer Science and Technology\n";
-        cout << "NAHID HASAN ARIF & AL MUSTAVIS AHMED RIFAT\n";
+        cout << "NAHID HASAN ARIF & AL MUSAVVIR AHAMED RIFAT\n";
         cout << "Project name: HOSPITAL MANAGEMENT SYSTEM\n";
         cout << "Using Language: C++(OOP)\n";
         cout << "Project made by application: VISUAL STUDIO CODE & MYSY2(MINGW64) COMPILER\n";
