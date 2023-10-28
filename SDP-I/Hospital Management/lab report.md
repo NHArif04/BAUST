@@ -37,12 +37,12 @@ The Hospital Management System is designed to assist healthcare institutions in 
 
 # Discussion:
 
-The implementation of this Hospital Management System successfully accomplishes the objectives. The use of object-oriented programming in C++ provides a structured and modular approach to managing patient data. The system allows for efficient patient record management, appointment scheduling, and medical record keeping. Challenges in data storage and retrieval have been addressed effectively.
+The Hospital Management System effectively achieves its goals through C++ object-oriented programming. It ensures structured patient data management, appointment scheduling, and medical record handling. Data storage and retrieval challenges are efficiently resolved.
 
-The system offers a user-friendly interface for hospital staff to interact with the database. Security is maintained through user authentication, ensuring that only authorized personnel can access and modify patient information. Additionally, the system is designed to handle a maximum of 1000 patients, providing scalability for small to medium-sized healthcare institutions.
+The user-friendly interface promotes staff engagement with the system. Robust security via user authentication restricts unauthorized data access. The system offers scalability for small to medium-sized healthcare institutions, accommodating up to 1000 patients.
 
 # Conclusion:
 
-The Hospital Management System is a robust and efficient solution for managing patient data, appointments, and medical records in healthcare institutions. It enhances the workflow of healthcare providers and ensures data security through user authentication. The use of C++ and object-oriented programming principles has contributed to the development of a reliable and user-friendly system.
+The Hospital Management System is a robust and secure solution for healthcare data management. It streamlines patient data, appointment management, and medical records. Employing C++ and object-oriented principles ensures a reliable and user-friendly system.
 
-The successful implementation of this system demonstrates its potential to improve healthcare management and patient care.
+The successful implementation underscores its potential to enhance healthcare management and patient care.
